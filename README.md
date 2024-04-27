@@ -11,7 +11,7 @@ liste = [
     "Sosyal ağların olumlu ve olumsuz yanları vardır ve bu platformları kullanırken her ikisinin de farkında olmalıyız.",
 ]
 
-odev = ["yazı", "tura"]
+odev = ["YAZI", "TURA"]
 
 @app.route("/")
 def home():
@@ -20,10 +20,15 @@ def home():
 @app.route("/teknoloji")
 def teknoloji():
     rastgele_kelime = random.choice(liste)
-    return f'<h1>{rastgele_kelime}</h1>'
+    return f"{rastgele_kelime}<a href='/'>Ana Rotaya Git</a>"
 
 @app.route("/yazitura")
 def yazitura():
+    rastgele_sekme = random.choice(odev)
+    return f"{rastgele_sekme}<a href='/'>Ana Rotaya Git</a>"
+
+
+app.run(debug=True)
     rastgele_sekme = random.choice(odev)
     return f'<h1>{rastgele_sekme}</h1>'
 
